@@ -10,6 +10,10 @@ def Prodect_list(request):
     return render(request,'Prodect/Prodect.html',contxet)
 
 
-def Prodect_det(request):
-    pass
+def Prodect_det(request , id):
+    Pro_detals = Products.objects.get(id=id)
+    contxet = {
+        'datels' :Pro_detals
+    }
+    return render(request,'Prodect/Prodect_det.html',contxet)
 
